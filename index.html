@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doc'</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121111;
+            color: #fff;
+        }
+        .sidebar {
+            width: 250px;
+            background: #1e1e1e;
+            padding: 20px;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar h2 {
+            margin: 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .sidebar li:hover {
+            background: #333;
+        }
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Documentation</h2>
+        <ul>
+            <li onclick="loadContent('intro')">tt</li>
+            <li onclick="loadContent('setup')">ttt</li>
+            <li onclick="loadContent('usage')">tttt</li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1 id="doc-title">Test</h1>
+        <p id="doc-text">test v2</p>
+    </div>
+    <script>
+        function loadContent(section) {
+            const content = {
+                intro: { title: "tt", text: "test" },
+                setup: { title: "ttt", text: "test" },
+                usage: { title: "tttt", text: "test" }
+            };
+            document.getElementById("doc-title").innerText = content[section].title;
+            document.getElementById("doc-text").innerText = content[section].text;
+        }
+    </script>
+</body>
+</html>
